@@ -2023,11 +2023,11 @@ async function callClaudeAPI(pdfText, _apiKey) {
   const WORKER_URL = 'https://xusnitdinov.husniddinovazizbek345.workers.dev';
   // ──────────────────────────────────────────────────────────
 
-  const response = await fetch(WORKER_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ prompt: combinedPrompt }),
-  });
+  const response = await fetch("/api", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ prompt: combinedPrompt }),
+});
 
   if (!response.ok) {
     const err = await response.json().catch(() => ({}));
